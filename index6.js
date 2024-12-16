@@ -12,3 +12,4 @@ wait.then((data) => {
     b = data;
     console.log(a + b)
 })
+

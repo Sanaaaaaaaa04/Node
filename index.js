@@ -1,7 +1,11 @@
-const http = require('http');
+const express = require('express');
+const path = require('path');
 
-http.createServer((req, resp) => {
-    resp.write("<h1>Hello Guysssss, Welcome Back to My Channel !!</h1> ");
-    resp.end();
-}).listen(4500);
+const app = express();
+const publicPath = path.join(__dirname, 'public')
+// app.use(express.static(publicPath));
+app.get('/index',(_, resp) => {
+    resp.sendFile(`${publicPath}/index.html `)
+})
 
+app.listen(5000);
